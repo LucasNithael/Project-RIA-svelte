@@ -36,5 +36,6 @@
     <h2>{name}</h2>
     <p>{email}</p>
     <button on:click={() => deleteClient(id)}>delete</button>
+    <a href="/client/{id}/">edit</a>
     <hr>
 {/each}

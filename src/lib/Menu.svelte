@@ -8,22 +8,22 @@
 
     const items = [
         {
-            label: 'Inicio',
+            label: 'Home',
             href: '/',
             style: style_class
         },
         {
-            label: 'Item',
+            label: 'Items',
             href: '/item',
             style: style_class
         },
         {
-            label: 'Theme',
+            label: 'Themes',
             href: '/theme',
             style: style_class
         },
         {
-            label: 'Client',
+            label: 'Clients',
             href: '/client',
             style: style_class
         },

@@ -3,8 +3,8 @@
     import Logo from "$lib/Logo.svelte"
     import DropDown from "$lib/DropDown.svelte"
 
-    const style_class = 'border-b-2 border-transparent hover:text-gray-800 transition-colors duration-300 transform dark:hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6'
-    const style_fixed = 'text-gray-800 transition-colors duration-300 transform dark:text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6'
+    const style_class = 'border-b-2 border-transparent transition-colors duration-300 transform hover:text-gray-200 hover:border-blue-500 mx-1.5 sm:mx-6'
+    const style_fixed = 'transition-colors duration-300 transform text-gray-200 border-b-2 border-blue-500 mx-1.5 sm:mx-6'
 
     const items = [
         {
@@ -13,13 +13,13 @@
             style: style_class
         },
         {
-            label: 'Items',
-            href: '/item',
+            label: 'Themes',
+            href: '/theme',
             style: style_class
         },
         {
-            label: 'Themes',
-            href: '/theme',
+            label: 'Items',
+            href: '/item',
             style: style_class
         },
         {
@@ -32,8 +32,8 @@
 
 </script>
 
-<nav class="bg-white shadow dark:bg-gray-800">
-    <div class="container flex items-center justify-center p-6 mx-auto text-gray-600 capitalize dark:text-gray-300">
+<nav class="shadow bg-gray-800">
+    <div class="container flex items-center justify-center p-6 mx-auto capitalize text-gray-300">
 
         <Logo />
 

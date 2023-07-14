@@ -4,16 +4,21 @@
 
     export let data
 
-    let item = {
+    let theme = {
         name: '',
-        description: ''
+        color: '',
+        price: 0,
+        itens: []
+
     }
+
+
 
     const id = data.id
 
     onMount(async () => {
         try{
-            item = await getApi(`/itens/${id}/`)
+            theme = await getApi(`/themes/${id}/`)
         } catch (error){
             console.log(error)
         }
@@ -22,22 +27,27 @@
 
     const editItem = async () => {
         try{
-            await putApi(`/itens/${id}/`, item)
+            await putApi(`/themes/${id}/`, theme)
             console.log('Alterado')
-            window.location.href = '/item'
+            window.location.href = '/theme'
         } catch(error){
             console.log(error)
         }
     }
+
+
 
 </script>
 
 
 <form on:submit={() => editItem()}>
     <label for="name">Name</label>
-    <input type="text" id="name" bind:value={item.name}>
-    <label for="description">Description</label>
-    <input type="text" id="description" bind:value={item.description}>
+    <input type="text" id="name" bind:value={theme.name}>
+    <label for="color">Color</label>
+    <input type="text" id="color" bind:value={theme.color}>
+    <label for="price">Price</label>
+    <input type="number" id="price" bind:value={theme.price}>
+
     <button>Save</button>
 </form>
 

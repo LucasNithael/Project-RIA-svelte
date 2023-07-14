@@ -29,6 +29,9 @@
             
             await postApi('/themes/', theme)
             console.log('Tema cadastrado')
+
+            window.location.href = '/theme'
+
         } catch(error){
             console.log(error)
         }

@@ -10,6 +10,7 @@
         try{
             await postApi('/clients/', client)
             console.log('client cadastrado')
+            window.location.href = '/client'
         } catch(error){
             console.log(error)
         }

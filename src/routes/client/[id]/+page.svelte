@@ -24,6 +24,7 @@
         try{
             await putApi(`/clients/${id}/`, client)
             console.log('Alterado')
+            window.location.href = '/client'
         } catch(error){
             console.log(error)
         }

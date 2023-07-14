@@ -10,6 +10,7 @@
         try{
             await postApi('/itens/', item)
             console.log('Item cadastrado')
+            window.location.href = '/item'
         } catch(error){
             console.log(error)
         }

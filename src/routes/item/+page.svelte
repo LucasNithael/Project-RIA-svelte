@@ -31,19 +31,19 @@
 
 </script>
 
-<div class="flex justify-center items-center mt-5">
+<div class="flex flex-col w-full items-center mt-5">
 
-    <div class="grid grid-cols-3 gap-y-4 gap-x-4 mx-auto my-auto">
+    <div class="">
         
         
         {#each items as {id ,name, description}}
-        <div class="border flex max-w-md overflow-hidden bg-white rounded-lg shadow-lg dark:bg-gray-800 w-500">
+        <div class="card rounded-lg border flex  shadow-lg overflow-hidden bg-white mb-5" >
             <div class="w-1/3 bg-cover" style="background-image: url('https://images.unsplash.com/photo-1494726161322-5360d4d0eeae?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80')"></div>
         
             <div class="w-2/3 p-4 md:p-4">
-                <h1 class="text-xl font-bold text-gray-800 dark:text-white">{name}</h1>
+                <h1 class="text-xl font-bold text-gray-800 --dark:text-white">{name}</h1>
         
-                <p class="mt-2 text-sm text-gray-600 dark:text-gray-400">{description}</p>
+                <p class="mt-2 text-sm text-gray-600 --dark:text-gray-400">{description}</p>
         
             </div>
 
@@ -79,9 +79,9 @@
 
 
 
-
 <style>
-    .lucas{
-        align-items: end;
+    .card{
+        height: 150px;
+        width: 800px;
     }
 </style>

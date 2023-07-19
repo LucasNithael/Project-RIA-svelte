@@ -27,9 +27,12 @@
 
     const editItem = async () => {
         try{
+            // @ts-ignore
+            theme.itens = [30]
+            console.log(theme)
             await putApi(`/themes/${id}/`, theme)
             console.log('Alterado')
-            window.location.href = '/theme'
+            //window.location.href = '/theme'
         } catch(error){
             console.log(error)
         }

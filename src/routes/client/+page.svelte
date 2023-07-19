@@ -33,18 +33,18 @@
 
 
 
-<section class="bg-white dark:bg-gray-900">
+<section class="bg-gray-100">
     <div class="container px-6 py-10 mx-auto">
 
-        <div class="grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
+        <div class=" grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
             {#each clients as {id, name, email}}
                 
-                <div class="flex flex-col items-center p-8 transition-colors duration-300 transform border rounded-xl shadow-lg">
+                <div class="bg-white flex flex-col items-center p-8 transition-colors duration-300 transform border rounded-xl shadow-lg">
                     <img class="object-cover w-32 h-32 rounded-full ring-4 ring-gray-300" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=880&q=80" alt="">
 
-                    <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize dark:text-white ">{name}</h1>
+                    <h1 class="mt-4 text-2xl font-semibold text-gray-700 capitalize --dark:text-white ">{name}</h1>
 
-                    <a href="mailto:{email}" class="mt-2 text-gray-500 capitalize dark:text-gray-300 ">{email}</a>
+                    <a href="mailto:{email}" class="mt-2 text-gray-500 ">{email}</a>
 
                     <div class="buttons mt-4 flex justify-end">
                         <button class="delete mr-4 mb-4" on:click={() => deleteClient(id)}>

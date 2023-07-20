@@ -46,10 +46,10 @@
                 }
             }
             
-            console.log(theme.itens)
+            console.log(theme)
             await postApi('/themes/', theme)
 
-           window.location.href = '/theme'
+          // window.location.href = '/theme'
 
         } catch(error){
             console.log(error)
@@ -67,7 +67,7 @@
 
     <h2 class="text-lg font-semibold text-gray-700 capitalize -dark:text-white">Register Item</h2>
 
-    <Form myFn={addTheme}> 
+    <Form myFun={addTheme}> 
  
             <Input inputs={inputs} />
 

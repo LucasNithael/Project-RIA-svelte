@@ -17,6 +17,11 @@
            icon: 'bi bi-person-plus-fill', 
            href: '/client/add' 
         },
+        {
+           name: 'add rent',
+           icon: 'bi bi-patch-plus', 
+           href: '/rent/add' 
+        },
     ]
 
 </script>

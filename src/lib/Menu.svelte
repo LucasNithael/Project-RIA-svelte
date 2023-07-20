@@ -27,6 +27,11 @@
             href: '/client',
             style: style_class
         },
+        {
+            label: 'Rents',
+            href: '/rent',
+            style: style_class
+        },
         
     ]
 

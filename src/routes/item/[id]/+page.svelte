@@ -1,6 +1,9 @@
 <script>
     import { onMount } from 'svelte';
     import { getApi, putApi } from '../../../api/api.js';
+    import Form from '$lib/Form.svelte';
+    import Input from '$lib/Input.svelte';
+    
 
     export let data
 
@@ -9,11 +12,21 @@
         description: ''
     }
 
+    /**
+     * @type {{ type: string; label: string; bind: { name: string; description: string; }; }[]}
+     */
+    let inputs = []
+
+
     const id = data.id
 
     onMount(async () => {
         try{
             item = await getApi(`/itens/${id}/`)
+            inputs = [
+                {type: 'text', label: 'name', bind: item},
+                {type: 'text', label: 'description', bind: item},
+            ]
         } catch (error){
             console.log(error)
         }
@@ -30,15 +43,17 @@
         }
     }
 
+    
+
 </script>
 
+<h2 class="text-lg font-semibold text-gray-700 capitalize -dark:text-white">Edit Item</h2>
 
-<form on:submit={() => editItem()}>
-    <label for="name">Name</label>
-    <input type="text" id="name" bind:value={item.name}>
-    <label for="description">Description</label>
-    <input type="text" id="description" bind:value={item.description}>
-    <button>Save</button>
-</form>
+<Form myFun={editItem}>
+
+    <Input inputs={inputs} />
+    
+    
+</Form>
 
 

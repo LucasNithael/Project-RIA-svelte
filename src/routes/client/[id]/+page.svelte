@@ -1,19 +1,33 @@
 <script>
+// @ts-nocheck
+
     import { onMount } from 'svelte';
     import { getApi, putApi } from '../../../api/api.js';
+    import Form from '$lib/Form.svelte';
+    import Input from '$lib/Input.svelte';
 
     export let data
+    const id = data.id
 
     let client = {
         name: '',
         email: ''
     }
 
-    const id = data.id
+    /**
+     * @type {{ type: string; label: string; bind: { name: string; email: string; }; }[]}
+     */
+    let inputs = []
 
     onMount(async () => {
         try{
             client = await getApi(`/clients/${id}/`)
+          
+            inputs = [
+                {type: 'text', label: 'name', bind: client},
+                {type: 'email', label: 'email', bind: client}
+             ]
+            
         } catch (error){
             console.log(error)
         }
@@ -32,11 +46,8 @@
 
 </script>
 
+<h2 class="text-lg font-semibold text-gray-700 capitalize -dark:text-white">Edit client</h2>
 
-<form on:submit={() => editclient()}>
-    <label for="name">Name</label>
-    <input type="text" id="name" bind:value={client.name}>
-    <label for="email">Email</label>
-    <input type="text" id="email" bind:value={client.email}>
-    <button>Save</button>
-</form>
+<Form myFn={editclient}>
+    <Input inputs={inputs} />
+</Form>

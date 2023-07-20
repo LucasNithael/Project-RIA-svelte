@@ -33,7 +33,7 @@
 
 
 
-<section class="bg-gray-100">
+
     <div class="container px-6 py-10 mx-auto">
 
         <div class=" grid grid-cols-1 gap-8 mt-8 xl:mt-16 md:grid-cols-2 xl:grid-cols-4">
@@ -73,4 +73,3 @@
             {/each}
         </div>
     </div>
-</section>

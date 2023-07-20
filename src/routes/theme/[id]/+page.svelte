@@ -47,15 +47,16 @@
     const editTheme = async () => {
         try{
             const checkboxes = document.querySelectorAll(".checkbox")
-            
+            let aux_items = []
             for (const c of checkboxes) {
                 // @ts-ignore
                 if(c.checked){
                     // @ts-ignore
-                    theme.itens.push(c.id)
+                    aux_items.push(c.id)
                     
                 }
             }
+            theme.itens = aux_items
             // @ts-ignore
             console.log(theme)
             await putApi(`/themes/${id}/`, theme)
